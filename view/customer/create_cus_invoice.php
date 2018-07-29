@@ -404,7 +404,7 @@ if (isset($_SESSION['login'])) {
             newCell.style.textAlign = "center";
 
             newCell = newRow.insertCell();
-            newCell.innerHTML = "<tr><td ><input onblur='change()' value='" + code + "'></td></tr>";
+            newCell.innerHTML = "<tr><td>" + code + "</td></tr>";
             newCell.style.textAlign = "center";
 
             newCell = newRow.insertCell();
