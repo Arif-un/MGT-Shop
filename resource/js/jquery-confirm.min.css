@@ -1,0 +1,2517 @@
+/*!
+ * jquery-confirm v3.3.0 (http://craftpip.github.io/jquery-confirm/)
+ * Author: boniface pereira
+ * Website: www.craftpip.com
+ * Contact: hey@craftpip.com
+ *
+ * Copyright 2013-2017 jquery-confirm
+ * Licensed under MIT (https://github.com/craftpip/jquery-confirm/blob/master/LICENSE)
+ */
+@-webkit - keyframes
+jconfirm - spin
+{
+    from
+    {
+        -webkit - transform
+    :
+        rotate(0
+        deg
+    )
+        ;
+        transform:rotate(0
+        deg
+    )
+    }
+    to
+    {
+        -webkit - transform
+    :
+        rotate(360
+        deg
+    )
+        ;
+        transform:rotate(360
+        deg
+    )
+    }
+}@keyframes
+jconfirm - spin
+{
+    from
+    {
+        -webkit - transform
+    :
+        rotate(0
+        deg
+    )
+        ;
+        transform:rotate(0
+        deg
+    )
+    }
+    to
+    {
+        -webkit - transform
+    :
+        rotate(360
+        deg
+    )
+        ;
+        transform:rotate(360
+        deg
+    )
+    }
+}
+body[class * = jconfirm - no - scroll -]
+{
+    overflow:hidden
+    !important
+}
+.
+jconfirm
+{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z - index
+:
+    99999999;
+    font - family
+:
+    inherit;
+    overflow:hidden
+}
+.
+jconfirm.jconfirm - bg
+{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    -webkit - transition
+:
+    opacity
+    .4
+    s;
+    transition:opacity
+    .4
+    s
+}
+.
+jconfirm.jconfirm - bg.jconfirm - bg - h
+{
+    opacity:0
+    !important
+}
+.
+jconfirm.jconfirm - scrollpane
+{
+    -webkit - perspective
+:
+    500
+    px;
+    perspective:500
+    px;
+    -webkit - perspective - origin
+:
+    center;
+    perspective - origin
+:
+    center;
+    display:table;
+    width:100 %;
+    height:100 %
+}
+.
+jconfirm.jconfirm - row
+{
+    display:table - row;
+    width:100 %
+}
+.
+jconfirm.jconfirm - cell
+{
+    display:table - cell;
+    vertical - align
+:
+    middle
+}
+.
+jconfirm.jconfirm - holder
+{
+    max - height
+:
+    100 %;
+    padding:50
+    px
+    0
+}
+.
+jconfirm.jconfirm - box - container
+{
+    -webkit - transition
+:
+    -webkit - transform;
+    transition:-webkit - transform;
+    transition:transform;
+    transition:transform, -webkit - transform
+}
+.
+jconfirm.jconfirm - box - container.jconfirm - no - transition
+{
+    -webkit - transition
+:
+    none
+    !important;
+    transition:none
+    !important
+}
+.
+jconfirm.jconfirm - box
+{
+    background:white;
+    border - radius
+:
+    4
+    px;
+    position:relative;
+    outline:0;
+    padding:15
+    px
+    15
+    px
+    0;
+    overflow:hidden;
+    margin - left
+:
+    auto;
+    margin - right
+:
+    auto
+}@-webkit - keyframes
+type - blue
+{
+    1 %, 100 % {border-color
+:#3498
+    db
+}
+    50 % {border-color
+:#5
+    faee3
+}
+}@keyframes
+type - blue
+{
+    1 %, 100 % {border-color
+:#3498
+    db
+}
+    50 % {border-color
+:#5
+    faee3
+}
+}@-webkit - keyframes
+type - green
+{
+    1 %, 100 % {border-color
+:#2e
+    cc71
+}
+    50 % {border-color
+:#54
+    d98c
+}
+}@keyframes
+type - green
+{
+    1 %, 100 % {border-color
+:#2e
+    cc71
+}
+    50 % {border-color
+:#54
+    d98c
+}
+}@-webkit - keyframes
+type - red
+{
+    1 %, 100 % {border-color
+:#e74c3c
+}
+    50 % {border-color
+:#ed7669
+}
+}@keyframes
+type - red
+{
+    1 %, 100 % {border-color
+:#e74c3c
+}
+    50 % {border-color
+:#ed7669
+}
+}@-webkit - keyframes
+type - orange
+{
+    1 %, 100 % {border-color
+:#f1c40f
+}
+    50 % {border-color
+:#f4d03f
+}
+}@keyframes
+type - orange
+{
+    1 %, 100 % {border-color
+:#f1c40f
+}
+    50 % {border-color
+:#f4d03f
+}
+}@-webkit - keyframes
+type - purple
+{
+    1 %, 100 % {border-color
+:#9
+    b59b6
+}
+    50 % {border-color
+:#b07cc6
+}
+}@keyframes
+type - purple
+{
+    1 %, 100 % {border-color
+:#9
+    b59b6
+}
+    50 % {border-color
+:#b07cc6
+}
+}@-webkit - keyframes
+type - dark
+{
+    1 %, 100 % {border-color
+:#34495e
+}
+    50 % {border-color
+:#46627
+    f
+}
+}@keyframes
+type - dark
+{
+    1 %, 100 % {border-color
+:#34495e
+}
+    50 % {border-color
+:#46627
+    f
+}
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - animated
+{
+    -webkit - animation - duration
+:
+    2
+    s;
+    animation - duration
+:
+    2
+    s;
+    -webkit - animation - iteration - count
+:
+    infinite;
+    animation - iteration - count
+:
+    infinite
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - blue
+{
+    border - top
+:
+    solid
+    7
+    px #3498
+    db;
+    -webkit - animation - name
+:
+    type - blue;
+    animation - name
+:
+    type - blue
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - green
+{
+    border - top
+:
+    solid
+    7
+    px #2e
+    cc71;
+    -webkit - animation - name
+:
+    type - green;
+    animation - name
+:
+    type - green
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - red
+{
+    border - top
+:
+    solid
+    7
+    px #e74c3c;
+    -webkit - animation - name
+:
+    type - red;
+    animation - name
+:
+    type - red
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - orange
+{
+    border - top
+:
+    solid
+    7
+    px #f1c40f;
+    -webkit - animation - name
+:
+    type - orange;
+    animation - name
+:
+    type - orange
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - purple
+{
+    border - top
+:
+    solid
+    7
+    px #9
+    b59b6;
+    -webkit - animation - name
+:
+    type - purple;
+    animation - name
+:
+    type - purple
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - dark
+{
+    border - top
+:
+    solid
+    7
+    px #34495e;
+    -webkit - animation - name
+:
+    type - dark;
+    animation - name
+:
+    type - dark
+}
+.
+jconfirm.jconfirm - box.loading
+{
+    height:120
+    px
+}
+.
+jconfirm.jconfirm - box.loading
+:
+before
+{
+    content:'';
+    position:absolute;
+    left:0;
+    background:white;
+    right:0;
+    top:0;
+    bottom:0;
+    border - radius
+:
+    10
+    px;
+    z - index
+:
+    1
+}
+.
+jconfirm.jconfirm - box.loading
+:
+after
+{
+    opacity:.6;
+    content:'';
+    height:30
+    px;
+    width:30
+    px;
+    border:solid
+    3
+    px
+    transparent;
+    position:absolute;
+    left:50 %;
+    margin - left
+:
+    -15
+    px;
+    border - radius
+:
+    50 %;
+    -webkit - animation
+:
+    jconfirm - spin
+    1
+    s
+    infinite
+    linear;
+    animation:jconfirm - spin
+    1
+    s
+    infinite
+    linear;
+    border - bottom - color
+:
+    dodgerblue;
+    top:50 %;
+    margin - top
+:
+    -15
+    px;
+    z - index
+:
+    2
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - closeIcon
+{
+    height:20
+    px;
+    width:20
+    px;
+    position:absolute;
+    top:10
+    px;
+    right:10
+    px;
+    cursor:pointer;
+    opacity:.6;
+    text - align
+:
+    center;
+    font - size
+:
+    27
+    px
+    !important;
+    line - height
+:
+    14
+    px
+    !important;
+    display:none;
+    z - index
+:
+    1
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - closeIcon
+:
+empty
+{
+    display:none
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - closeIcon.fa
+{
+    font - size
+:
+    16
+    px
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - closeIcon.glyphicon
+{
+    font - size
+:
+    16
+    px
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - closeIcon.zmdi
+{
+    font - size
+:
+    16
+    px
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - closeIcon
+:
+hover
+{
+    opacity:1
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c
+{
+    display:block;
+    font - size
+:
+    22
+    px;
+    line - height
+:
+    20
+    px;
+    -webkit - user - select
+:
+    none;
+    -moz - user - select
+:
+    none;
+    -ms - user - select
+:
+    none;
+    user - select
+:
+    none;
+    cursor:default
+    ;padding - bottom
+:
+    15
+    px
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c.jconfirm - hand
+{
+    cursor:move
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c.jconfirm - icon - c
+{
+    font - size
+:
+    inherit;
+    display:inline - block;
+    vertical - align
+:
+    middle
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c.jconfirm - icon - c
+i
+{
+    vertical - align
+:
+    middle
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c.jconfirm - icon - c
+:
+empty
+{
+    display:none
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c.jconfirm - title
+{
+    -webkit - user - select
+:
+    none;
+    -moz - user - select
+:
+    none;
+    -ms - user - select
+:
+    none;
+    user - select
+:
+    none;
+    font - size
+:
+    inherit;
+    font - family
+:
+    inherit;
+    display:inline - block;
+    vertical - align
+:
+    middle
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - title - c.jconfirm - title
+:
+empty
+{
+    display:none
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane
+{
+    margin - bottom
+:
+    15
+    px;
+    height:auto;
+    -webkit - transition
+:
+    height
+    .4
+    s
+    ease - in;
+    transition:height
+    .4
+    s
+    ease - in;
+    display:inline - block;
+    width:100 %;
+    position:relative;
+    overflow - x
+:
+    hidden;
+    overflow - y
+:
+    auto
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane.no - scroll
+{
+    overflow - y
+:
+    hidden
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane:: - webkit - scrollbar
+{
+    width:3
+    px
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane:: - webkit - scrollbar - track
+{
+    background:rgba(0, 0, 0, 0.1)
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane:: - webkit - scrollbar - thumb
+{
+    background:#
+    666;
+    border - radius
+:
+    3
+    px
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane.jconfirm - content
+{
+    overflow:auto
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane.jconfirm - content
+img
+{
+    max - width
+:
+    100 %;
+    height:auto
+}
+.
+jconfirm.jconfirm - box
+div.jconfirm - content - pane.jconfirm - content
+:
+empty
+{
+    display:none
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+{
+    padding - bottom
+:
+    11
+    px
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons > button
+{
+    margin - bottom
+:
+    4
+    px;
+    margin - left
+:
+    2
+    px;
+    margin - right
+:
+    2
+    px
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button
+{
+    display:inline - block;
+    padding:6
+    px
+    12
+    px;
+    font - size
+:
+    14
+    px;
+    font - weight
+:
+    400;
+    line - height
+:
+    1.42857143;
+    text - align
+:
+    center;
+    white - space
+:
+    nowrap;
+    vertical - align
+:
+    middle;
+    -ms - touch - action
+:
+    manipulation;
+    touch - action
+:
+    manipulation;
+    cursor:pointer;
+    -webkit - user - select
+:
+    none;
+    -moz - user - select
+:
+    none;
+    -ms - user - select
+:
+    none;
+    user - select
+:
+    none;
+    border - radius
+:
+    4
+    px;
+    min - height
+:
+    1e
+    m;
+    -webkit - transition
+:
+    opacity
+    .1
+    s
+    ease, background - color
+    .1
+    s
+    ease, color
+    .1
+    s
+    ease, background
+    .1
+    s
+    ease, -webkit - box - shadow
+    .1
+    s
+    ease;
+    transition:opacity
+    .1
+    s
+    ease, background - color
+    .1
+    s
+    ease, color
+    .1
+    s
+    ease, background
+    .1
+    s
+    ease, -webkit - box - shadow
+    .1
+    s
+    ease;
+    transition:opacity
+    .1
+    s
+    ease, background - color
+    .1
+    s
+    ease, color
+    .1
+    s
+    ease, box - shadow
+    .1
+    s
+    ease, background
+    .1
+    s
+    ease;
+    transition:opacity
+    .1
+    s
+    ease, background - color
+    .1
+    s
+    ease, color
+    .1
+    s
+    ease, box - shadow
+    .1
+    s
+    ease, background
+    .1
+    s
+    ease, -webkit - box - shadow
+    .1
+    s
+    ease;
+    -webkit - tap - highlight - color
+:
+    transparent;
+    border:0;
+    background - image
+:
+    none
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - blue
+{
+    background - color
+:#3498
+    db;
+    color:#
+    FFF;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - blue
+:
+hover
+{
+    background - color
+:#2980
+    b9;
+    color:#
+    FFF
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - green
+{
+    background - color
+:#2e
+    cc71;
+    color:#
+    FFF;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - green
+:
+hover
+{
+    background - color
+:#27
+    ae60;
+    color:#
+    FFF
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - red
+{
+    background - color
+:#e74c3c;
+    color:#
+    FFF;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - red
+:
+hover
+{
+    background - color
+:#c0392b;
+    color:#
+    FFF
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - orange
+{
+    background - color
+:#f1c40f;
+    color:#
+    FFF;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - orange
+:
+hover
+{
+    background - color
+:#f39c12;
+    color:#
+    FFF
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn -
+default
+{
+    background - color
+:#ecf0f1;
+    color:#
+    000;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn -
+default:
+hover
+{
+    background - color
+:#bdc3c7;
+    color:#
+    000
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - purple
+{
+    background - color
+:#9
+    b59b6;
+    color:#
+    FFF;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - purple
+:
+hover
+{
+    background - color
+:#8e44
+    ad;
+    color:#
+    FFF
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - dark
+{
+    background - color
+:#34495e;
+    color:#
+    FFF;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .2
+    s;
+    transition:background
+    .2
+    s
+}
+.
+jconfirm.jconfirm - box.jconfirm - buttons
+button.btn - dark
+:
+hover
+{
+    background - color
+:#2
+    c3e50;
+    color:#
+    FFF
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - red.jconfirm - title - c.jconfirm - icon - c
+{
+    color:#
+    e74c3c
+    !important
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - blue.jconfirm - title - c.jconfirm - icon - c
+{
+    color:#
+    3498
+    db
+    !important
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - green.jconfirm - title - c.jconfirm - icon - c
+{
+    color:#
+    2e
+    cc71
+    !important
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - purple.jconfirm - title - c.jconfirm - icon - c
+{
+    color:#
+    9
+    b59b6
+    !important
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - orange.jconfirm - title - c.jconfirm - icon - c
+{
+    color:#
+    f1c40f
+    !important
+}
+.
+jconfirm.jconfirm - box.jconfirm - type - dark.jconfirm - title - c.jconfirm - icon - c
+{
+    color:#
+    34495e
+    !important
+}
+.
+jconfirm.jconfirm - clear
+{
+    clear:both
+}
+.
+jconfirm.jconfirm - rtl
+{
+    direction:rtl
+}
+.
+jconfirm.jconfirm - rtl
+div.jconfirm - closeIcon
+{
+    left:5
+    px;
+    right:auto
+}
+.
+jconfirm.jconfirm - white.jconfirm - bg,
+.
+jconfirm.jconfirm - light.jconfirm - bg
+{
+    background - color
+:#444;
+    opacity:.2
+}
+.
+jconfirm.jconfirm - white.jconfirm - box,
+.
+jconfirm.jconfirm - light.jconfirm - box
+{
+    -webkit - box - shadow
+:
+    0
+    2
+    px
+    6
+    px
+    rgba(0, 0, 0, 0.2);
+    box - shadow
+:
+    0
+    2
+    px
+    6
+    px
+    rgba(0, 0, 0, 0.2);
+    border - radius
+:
+    5
+    px
+}
+.
+jconfirm.jconfirm - white.jconfirm - box.jconfirm - title - c.jconfirm - icon - c,
+.
+jconfirm.jconfirm - light.jconfirm - box.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - right
+:
+    8
+    px;
+    margin - left
+:
+    0
+}
+.
+jconfirm.jconfirm - white.jconfirm - box.jconfirm - buttons,
+.
+jconfirm.jconfirm - light.jconfirm - box.jconfirm - buttons
+{
+    float:right
+}
+.
+jconfirm.jconfirm - white.jconfirm - box.jconfirm - buttons
+button,
+.
+jconfirm.jconfirm - light.jconfirm - box.jconfirm - buttons
+button
+{
+    text - transform
+:
+    uppercase;
+    font - size
+:
+    14
+    px;
+    font - weight
+:
+    bold;
+    text - shadow
+:
+    none
+}
+.
+jconfirm.jconfirm - white.jconfirm - box.jconfirm - buttons
+button.btn -
+default,.
+jconfirm.jconfirm - light.jconfirm - box.jconfirm - buttons
+button.btn -
+default
+{
+    -webkit - box - shadow
+:
+    none;
+    box - shadow
+:
+    none;
+    color:#
+    333
+}
+.
+jconfirm.jconfirm - white.jconfirm - box.jconfirm - buttons
+button.btn -
+default:
+hover,
+.
+jconfirm.jconfirm - light.jconfirm - box.jconfirm - buttons
+button.btn -
+default:
+hover
+{
+    background:#
+    ddd
+}
+.
+jconfirm.jconfirm - white.jconfirm - rtl.jconfirm - title - c.jconfirm - icon - c,
+.
+jconfirm.jconfirm - light.jconfirm - rtl.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - left
+:
+    8
+    px;
+    margin - right
+:
+    0
+}
+.
+jconfirm.jconfirm - black.jconfirm - bg,
+.
+jconfirm.jconfirm - dark.jconfirm - bg
+{
+    background - color
+:
+    darkslategray;
+    opacity:.4
+}
+.
+jconfirm.jconfirm - black.jconfirm - box,
+.
+jconfirm.jconfirm - dark.jconfirm - box
+{
+    -webkit - box - shadow
+:
+    0
+    2
+    px
+    6
+    px
+    rgba(0, 0, 0, 0.2);
+    box - shadow
+:
+    0
+    2
+    px
+    6
+    px
+    rgba(0, 0, 0, 0.2);
+    background:#
+    444;
+    border - radius
+:
+    5
+    px;
+    color:white
+}
+.
+jconfirm.jconfirm - black.jconfirm - box.jconfirm - title - c.jconfirm - icon - c,
+.
+jconfirm.jconfirm - dark.jconfirm - box.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - right
+:
+    8
+    px;
+    margin - left
+:
+    0
+}
+.
+jconfirm.jconfirm - black.jconfirm - box.jconfirm - buttons,
+.
+jconfirm.jconfirm - dark.jconfirm - box.jconfirm - buttons
+{
+    float:right
+}
+.
+jconfirm.jconfirm - black.jconfirm - box.jconfirm - buttons
+button,
+.
+jconfirm.jconfirm - dark.jconfirm - box.jconfirm - buttons
+button
+{
+    border:0;
+    background - image
+:
+    none;
+    text - transform
+:
+    uppercase;
+    font - size
+:
+    14
+    px;
+    font - weight
+:
+    bold;
+    text - shadow
+:
+    none;
+    -webkit - transition
+:
+    background
+    .1
+    s;
+    transition:background
+    .1
+    s;
+    color:white
+}
+.
+jconfirm.jconfirm - black.jconfirm - box.jconfirm - buttons
+button.btn -
+default,.
+jconfirm.jconfirm - dark.jconfirm - box.jconfirm - buttons
+button.btn -
+default
+{
+    -webkit - box - shadow
+:
+    none;
+    box - shadow
+:
+    none;
+    color:#
+    fff;
+    background:0
+}
+.
+jconfirm.jconfirm - black.jconfirm - box.jconfirm - buttons
+button.btn -
+default:
+hover,
+.
+jconfirm.jconfirm - dark.jconfirm - box.jconfirm - buttons
+button.btn -
+default:
+hover
+{
+    background:#
+    666
+}
+.
+jconfirm.jconfirm - black.jconfirm - rtl.jconfirm - title - c.jconfirm - icon - c,
+.
+jconfirm.jconfirm - dark.jconfirm - rtl.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - left
+:
+    8
+    px;
+    margin - right
+:
+    0
+}
+.
+jconfirm.jconfirm - box.hilight.jconfirm - hilight - shake
+{
+    -webkit - animation
+:
+    shake
+    .82
+    s
+    cubic - bezier(0.36, 0.07, 0.19, 0.97)
+    both;
+    animation:shake
+    .82
+    s
+    cubic - bezier(0.36, 0.07, 0.19, 0.97)
+    both;
+    -webkit - transform
+:
+    translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0)
+}
+.
+jconfirm.jconfirm - box.hilight.jconfirm - hilight - glow
+{
+    -webkit - animation
+:
+    glow
+    .82
+    s
+    cubic - bezier(0.36, 0.07, 0.19, 0.97)
+    both;
+    animation:glow
+    .82
+    s
+    cubic - bezier(0.36, 0.07, 0.19, 0.97)
+    both;
+    -webkit - transform
+:
+    translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0)
+}@-webkit - keyframes
+shake
+{
+    10 %, 90 % { - webkit - transform
+:
+    translate3d(-2
+    px, 0, 0
+)
+    ;
+    transform:translate3d(-2
+    px, 0, 0
+)
+}
+    20 %, 80 % { - webkit - transform
+:
+    translate3d(4
+    px, 0, 0
+)
+    ;
+    transform:translate3d(4
+    px, 0, 0
+)
+}
+    30 %, 50 %, 70 % { - webkit - transform
+:
+    translate3d(-8
+    px, 0, 0
+)
+    ;
+    transform:translate3d(-8
+    px, 0, 0
+)
+}
+    40 %, 60 % { - webkit - transform
+:
+    translate3d(8
+    px, 0, 0
+)
+    ;
+    transform:translate3d(8
+    px, 0, 0
+)
+}
+}@keyframes
+shake
+{
+    10 %, 90 % { - webkit - transform
+:
+    translate3d(-2
+    px, 0, 0
+)
+    ;
+    transform:translate3d(-2
+    px, 0, 0
+)
+}
+    20 %, 80 % { - webkit - transform
+:
+    translate3d(4
+    px, 0, 0
+)
+    ;
+    transform:translate3d(4
+    px, 0, 0
+)
+}
+    30 %, 50 %, 70 % { - webkit - transform
+:
+    translate3d(-8
+    px, 0, 0
+)
+    ;
+    transform:translate3d(-8
+    px, 0, 0
+)
+}
+    40 %, 60 % { - webkit - transform
+:
+    translate3d(8
+    px, 0, 0
+)
+    ;
+    transform:translate3d(8
+    px, 0, 0
+)
+}
+}@-webkit - keyframes
+glow
+{
+    0 %, 100 % { - webkit - box - shadow
+:
+    0
+    0
+    0
+    red;
+    box - shadow
+:
+    0
+    0
+    0
+    red
+}
+    50 % { - webkit - box - shadow
+:
+    0
+    0
+    30
+    px
+    red;
+    box - shadow
+:
+    0
+    0
+    30
+    px
+    red
+}
+}@keyframes
+glow
+{
+    0 %, 100 % { - webkit - box - shadow
+:
+    0
+    0
+    0
+    red;
+    box - shadow
+:
+    0
+    0
+    0
+    red
+}
+    50 % { - webkit - box - shadow
+:
+    0
+    0
+    30
+    px
+    red;
+    box - shadow
+:
+    0
+    0
+    30
+    px
+    red
+}
+}
+.
+jconfirm
+{
+    -webkit - perspective
+:
+    400
+    px;
+    perspective:400
+    px
+}
+.
+jconfirm.jconfirm - box
+{
+    opacity:1;
+    -webkit - transition - property
+:
+    all;
+    transition - property
+:
+    all
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - top,
+.
+jconfirm.jconfirm - box.jconfirm - animation - left,
+.
+jconfirm.jconfirm - box.jconfirm - animation - right,
+.
+jconfirm.jconfirm - box.jconfirm - animation - bottom,
+.
+jconfirm.jconfirm - box.jconfirm - animation - opacity,
+.
+jconfirm.jconfirm - box.jconfirm - animation - zoom,
+.
+jconfirm.jconfirm - box.jconfirm - animation - scale,
+.
+jconfirm.jconfirm - box.jconfirm - animation - none,
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotate,
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotatex,
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotatey,
+.
+jconfirm.jconfirm - box.jconfirm - animation - scaley,
+.
+jconfirm.jconfirm - box.jconfirm - animation - scalex
+{
+    opacity:0
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotate
+{
+    -webkit - transform
+:
+    rotate(90
+    deg
+)
+    ;
+    transform:rotate(90
+    deg
+)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotatex
+{
+    -webkit - transform
+:
+    rotateX(90
+    deg
+)
+    ;
+    transform:rotateX(90
+    deg
+)
+    ;-webkit - transform - origin
+:
+    center;
+    transform - origin
+:
+    center
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotatexr
+{
+    -webkit - transform
+:
+    rotateX(-90
+    deg
+)
+    ;
+    transform:rotateX(-90
+    deg
+)
+    ;-webkit - transform - origin
+:
+    center;
+    transform - origin
+:
+    center
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotatey
+{
+    -webkit - transform
+:
+    rotatey(90
+    deg
+)
+    ;
+    transform:rotatey(90
+    deg
+)
+    ;-webkit - transform - origin
+:
+    center;
+    transform - origin
+:
+    center
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - rotateyr
+{
+    -webkit - transform
+:
+    rotatey(-90
+    deg
+)
+    ;
+    transform:rotatey(-90
+    deg
+)
+    ;-webkit - transform - origin
+:
+    center;
+    transform - origin
+:
+    center
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - scaley
+{
+    -webkit - transform
+:
+    scaley(1.5);
+    transform:scaley(1.5);
+    -webkit - transform - origin
+:
+    center;
+    transform - origin
+:
+    center
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - scalex
+{
+    -webkit - transform
+:
+    scalex(1.5);
+    transform:scalex(1.5);
+    -webkit - transform - origin
+:
+    center;
+    transform - origin
+:
+    center
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - top
+{
+    -webkit - transform
+:
+    translate(0
+    px, -100
+    px
+)
+    ;
+    transform:translate(0
+    px, -100
+    px
+)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - left
+{
+    -webkit - transform
+:
+    translate(-100
+    px, 0
+    px
+)
+    ;
+    transform:translate(-100
+    px, 0
+    px
+)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - right
+{
+    -webkit - transform
+:
+    translate(100
+    px, 0
+    px
+)
+    ;
+    transform:translate(100
+    px, 0
+    px
+)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - bottom
+{
+    -webkit - transform
+:
+    translate(0
+    px, 100
+    px
+)
+    ;
+    transform:translate(0
+    px, 100
+    px
+)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - zoom
+{
+    -webkit - transform
+:
+    scale(1.2);
+    transform:scale(1.2)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - scale
+{
+    -webkit - transform
+:
+    scale(0.5);
+    transform:scale(0.5)
+}
+.
+jconfirm.jconfirm - box.jconfirm - animation - none
+{
+    visibility:hidden
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - bg
+{
+    background - color
+:
+    rgba(54, 70, 93, 0.95)
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box
+{
+    background - color
+:
+    transparent
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - type - blue
+{
+    border:0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - type - green
+{
+    border:0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - type - red
+{
+    border:0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - type - orange
+{
+    border:0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - type - purple
+{
+    border:0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - type - dark
+{
+    border:0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box
+div.jconfirm - closeIcon
+{
+    color:white
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box
+div.jconfirm - title - c
+{
+    text - align
+:
+    center;
+    color:white;
+    font - size
+:
+    28
+    px;
+    font - weight
+:
+    normal
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box
+div.jconfirm - title - c > * {padding-bottom
+:
+25
+px
+}.
+jconfirm.jconfirm - supervan.jconfirm - box
+div.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - right
+:
+    8
+    px;
+    margin - left
+:
+    0
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box
+div.jconfirm - content - pane
+{
+    margin - bottom
+:
+    25
+    px
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box
+div.jconfirm - content
+{
+    text - align
+:
+    center;
+    color:white
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - buttons
+{
+    text - align
+:
+    center
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - box.jconfirm - buttons
+button
+{
+    font - size
+:
+    16
+    px;
+    border - radius
+:
+    2
+    px;
+    background:#
+    303
+    f53;
+    text - shadow
+:
+    none;
+    border:0;
+    color:white;
+    padding:10
+    px;
+    min - width
+:
+    100
+    px
+}
+.
+jconfirm.jconfirm - supervan.jconfirm - rtl.jconfirm - box
+div.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - left
+:
+    8
+    px;
+    margin - right
+:
+    0
+}
+.
+jconfirm.jconfirm - material.jconfirm - bg
+{
+    background - color
+:
+    rgba(0, 0, 0, 0.67)
+}
+.
+jconfirm.jconfirm - material.jconfirm - box
+{
+    background - color
+:
+    white;
+    -webkit - box - shadow
+:
+    0
+    7
+    px
+    8
+    px - 4
+    px
+    rgba(0, 0, 0, 0.2), 0
+    13
+    px
+    19
+    px
+    2
+    px
+    rgba(0, 0, 0, 0.14), 0
+    5
+    px
+    24
+    px
+    4
+    px
+    rgba(0, 0, 0, 0.12);
+    box - shadow
+:
+    0
+    7
+    px
+    8
+    px - 4
+    px
+    rgba(0, 0, 0, 0.2), 0
+    13
+    px
+    19
+    px
+    2
+    px
+    rgba(0, 0, 0, 0.14), 0
+    5
+    px
+    24
+    px
+    4
+    px
+    rgba(0, 0, 0, 0.12);
+    padding:30
+    px
+    25
+    px
+    10
+    px
+    25
+    px
+}
+.
+jconfirm.jconfirm - material.jconfirm - box.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - right
+:
+    8
+    px;
+    margin - left
+:
+    0
+}
+.
+jconfirm.jconfirm - material.jconfirm - box
+div.jconfirm - closeIcon
+{
+    color:rgba(0, 0, 0, 0.87)
+}
+.
+jconfirm.jconfirm - material.jconfirm - box
+div.jconfirm - title - c
+{
+    color:rgba(0, 0, 0, 0.87);
+    font - size
+:
+    22
+    px;
+    font - weight
+:
+    bold
+}
+.
+jconfirm.jconfirm - material.jconfirm - box
+div.jconfirm - content
+{
+    color:rgba(0, 0, 0, 0.87)
+}
+.
+jconfirm.jconfirm - material.jconfirm - box.jconfirm - buttons
+{
+    text - align
+:
+    right
+}
+.
+jconfirm.jconfirm - material.jconfirm - box.jconfirm - buttons
+button
+{
+    text - transform
+:
+    uppercase;
+    font - weight
+:
+    500
+}
+.
+jconfirm.jconfirm - material.jconfirm - rtl.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - left
+:
+    8
+    px;
+    margin - right
+:
+    0
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - bg
+{
+    background - color
+:
+    rgba(0, 0, 0, 0.21)
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box
+{
+    background - color
+:
+    white;
+    -webkit - box - shadow
+:
+    0
+    3
+    px
+    8
+    px
+    0
+    rgba(0, 0, 0, 0.2);
+    box - shadow
+:
+    0
+    3
+    px
+    8
+    px
+    0
+    rgba(0, 0, 0, 0.2);
+    border:solid
+    1
+    px
+    rgba(0, 0, 0, 0.4);
+    padding:15
+    px
+    0
+    0
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - right
+:
+    8
+    px;
+    margin - left
+:
+    0
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box
+div.jconfirm - closeIcon
+{
+    color:rgba(0, 0, 0, 0.87)
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box
+div.jconfirm - title - c
+{
+    color:rgba(0, 0, 0, 0.87);
+    font - size
+:
+    22
+    px;
+    font - weight
+:
+    bold;
+    padding - left
+:
+    15
+    px;
+    padding - right
+:
+    15
+    px
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box
+div.jconfirm - content
+{
+    color:rgba(0, 0, 0, 0.87);
+    padding:0
+    15
+    px
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box.jconfirm - buttons
+{
+    text - align
+:
+    right;
+    padding:10
+    px;
+    margin:-5
+    px
+    0
+    0;
+    border - top
+:
+    solid
+    1
+    px #ddd;
+    overflow:hidden;
+    border - radius
+:
+    0
+    0
+    4
+    px
+    4
+    px
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - box.jconfirm - buttons
+button
+{
+    font - weight
+:
+    500
+}
+.
+jconfirm.jconfirm - bootstrap.jconfirm - rtl.jconfirm - title - c.jconfirm - icon - c
+{
+    margin - left
+:
+    8
+    px;
+    margin - right
+:
+    0
+}
+.
+jconfirm.jconfirm - modern.jconfirm - bg
+{
+    background - color
+:
+    slategray;
+    opacity:.6
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box
+{
+    background - color
+:
+    white;
+    -webkit - box - shadow
+:
+    0
+    7
+    px
+    8
+    px - 4
+    px
+    rgba(0, 0, 0, 0.2), 0
+    13
+    px
+    19
+    px
+    2
+    px
+    rgba(0, 0, 0, 0.14), 0
+    5
+    px
+    24
+    px
+    4
+    px
+    rgba(0, 0, 0, 0.12);
+    box - shadow
+:
+    0
+    7
+    px
+    8
+    px - 4
+    px
+    rgba(0, 0, 0, 0.2), 0
+    13
+    px
+    19
+    px
+    2
+    px
+    rgba(0, 0, 0, 0.14), 0
+    5
+    px
+    24
+    px
+    4
+    px
+    rgba(0, 0, 0, 0.12);
+    padding:30
+    px
+    30
+    px
+    15
+    px
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box
+div.jconfirm - closeIcon
+{
+    color:rgba(0, 0, 0, 0.87);
+    top:15
+    px;
+    right:15
+    px
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box
+div.jconfirm - title - c
+{
+    color:rgba(0, 0, 0, 0.87);
+    font - size
+:
+    24
+    px;
+    font - weight
+:
+    bold;
+    text - align
+:
+    center;
+    margin - bottom
+:
+    10
+    px
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box
+div.jconfirm - title - c.jconfirm - icon - c
+{
+    -webkit - transition
+:
+    -webkit - transform
+    .5
+    s;
+    transition:-webkit - transform
+    .5
+    s;
+    transition:transform
+    .5
+    s;
+    transition:transform
+    .5
+    s, -webkit - transform
+    .5
+    s;
+    -webkit - transform
+:
+    scale(0);
+    transform:scale(0);
+    display:block;
+    margin - right
+:
+    0;
+    margin - left
+:
+    0;
+    margin - bottom
+:
+    10
+    px;
+    font - size
+:
+    69
+    px;
+    color:#
+    aaa
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box
+div.jconfirm - content
+{
+    text - align
+:
+    center;
+    font - size
+:
+    15
+    px;
+    color:#
+    777;
+    margin - bottom
+:
+    25
+    px
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box.jconfirm - buttons
+{
+    text - align
+:
+    center
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box.jconfirm - buttons
+button
+{
+    font - weight
+:
+    bold;
+    text - transform
+:
+    uppercase;
+    -webkit - transition
+:
+    background
+    .1
+    s;
+    transition:background
+    .1
+    s;
+    padding:10
+    px
+    20
+    px
+}
+.
+jconfirm.jconfirm - modern.jconfirm - box.jconfirm - buttons
+button + button
+{
+    margin - left
+:
+    4
+    px
+}
+.
+jconfirm.jconfirm - modern.jconfirm - open.jconfirm - box.jconfirm - title - c.jconfirm - icon - c
+{
+    -webkit - transform
+:
+    scale(1);
+    transform:scale(1)
+}

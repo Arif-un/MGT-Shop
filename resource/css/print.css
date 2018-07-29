@@ -1,0 +1,221 @@
+@media print /*--This is for Print--*/ {
+
+    .bttn {
+
+        display: none;
+
+    }
+
+    .tble {
+
+        background-color: #CD853F;
+
+        border: 1px solid green;
+
+        -webkit-print-color-adjust: exact
+
+        /*above line of codes will set the table background-color and change the border color when we give the print and preview (print preview only when we see on print preview via browser) command*/
+
+    }
+
+    body {
+        font-family: Arial;
+    }
+
+    table, th, td {
+
+        border-collapse: collapse;
+
+    }
+
+    td {
+        border: 1px solid black;
+        height: 20px;
+    }
+
+    .space {
+        min-width: 150px;
+    }
+
+    .right {
+        text-align: right;
+
+    }
+
+    .clearfix {
+        overflow: auto;
+    }
+
+    .f_right {
+        float: right;
+    }
+
+    .min_pad {
+        padding: 5px;
+    }
+
+    .table_top_margin {
+        margin-top: 5px;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .main {
+        margin: auto;
+        border: 1px solid #dddddd;
+        padding: 20px;
+    }
+
+    .head {
+        margin-left: 3%;
+        margin-top: -20px;
+    }
+
+    .head_content {
+        /* margin-left: 200px;*/
+        margin-top: -120px;
+        text-align: center;
+    }
+
+    .full_w {
+        width: 100%;
+    }
+
+    .no_print {
+        display: none;
+    }
+
+    .higt {
+        min-height: 615px;
+        margin-top: -30px;
+    }
+
+    .print_del_in_no {
+        margin-left: 200px;
+        margin-top: -35px
+    }
+
+    .trn {
+        margin-right: 20px;
+        width: 15%;
+        border: none;
+        background-color: transparent
+    }
+
+    .cus_date {
+        /*margin-left: 485px;*/
+        display: inline;
+        float: right;
+        margin-top: -10px;
+    }
+
+    .cus_date input {
+        width: 170px;
+        display: inline;
+    }
+
+    .date {
+        margin-top: -20px;
+    }
+
+    .date input {
+        width: 170px;
+        display: inline;
+    }
+
+    #cus_name{
+        width: 70%;
+    }
+}
+
+/*
+@media screen !*--This is for Print Preview Screen--*! {
+
+    .bton {
+
+        display: none;
+
+    }
+
+    .tble {
+
+        background-color: #CD853F;
+
+        border: 1px solid green;
+
+        -webkit-print-color-adjust: exact
+
+        !*above line of codes will set the table background-color and change the border color when we give the print and preview (print preview only when we see on print preview via browser) command*!
+
+    }
+
+    body {
+        font-family: Arial;
+    }
+
+    table, th, td {
+
+        border-collapse: collapse;
+
+    }
+
+    td {
+        border: 1px solid black;
+        height: 20px;
+    }
+
+    .space {
+        min-width: 150px;
+    }
+
+    .right {
+        text-align: right;
+
+    }
+
+    .clearfix {
+        overflow: auto;
+    }
+
+    .f_right {
+        float: right;
+    }
+
+    .min_pad {
+        padding: 5px;
+    }
+
+    .table_top_margin {
+        margin-top: 5px;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .main {
+        margin: auto;
+        border: 1px black solid;
+        padding: 20px;
+    }
+
+    .head {
+        margin-left: 400px;
+        margin-top: -20px;
+    }
+
+    .head_content {
+        margin-left: 200px;
+        margin-top: -120px;
+        text-align: center;
+    }
+
+    .full_w {
+        width: 100%;
+    }
+
+
+
+}*/

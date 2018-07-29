@@ -1,0 +1,142 @@
+@media screen /*--This is for Screen--*/ {
+
+    .total_table{
+       width: 100px;
+        padding: 0px;
+        font-size: 15px;
+        margin: 0px;
+    }
+    .total_tr{
+        margin: 0px;
+    }
+
+    body {
+        font-family: Arial;
+    }
+
+    /*table, th, td {
+
+        border-collapse: collapse;
+
+    }
+
+    td {
+        border: 1px solid black;
+        height: 20px;
+    }*/
+
+    .space {
+        min-width: 150px;
+    }
+
+    .right {
+        text-align: right;
+
+    }
+
+    .clearfix {
+        overflow: auto;
+    }
+
+    .f_right {
+        float: right;
+    }
+
+    .min_pad {
+        padding: 5px;
+    }
+
+    .table_top_margin {
+        margin-top: 5px;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .main {
+        margin: auto;
+        border: 1px solid #dddddd;
+        padding: 20px;
+    }
+
+    .head {
+        margin-left: 400px;
+        margin-top: -20px;
+    }
+
+    .head_content {
+
+        margin-left: 200px;
+        margin-top: -120px;
+        text-align: center;
+    }
+
+    .full_w {
+        width: 100%;
+    }
+
+    .no_screen {
+        display: none;
+    }
+
+    .button {
+        background-color: #e9ecef;
+        border: none;
+        color: black;
+        padding: 0px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0px;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 50%;
+
+    }
+
+
+
+    .higt {
+        height: 100%;
+        min-height: 500px;
+        margin-top: 30px
+    }
+
+    .del_in_no{
+        margin-left:230px;margin-top: -45px
+    }
+    .trn{
+        width: 200px;border: none;background-color: transparent
+    }
+    .del_in_date{
+        margin-left:280px;margin-top: -45px
+    }
+    .cus_date{
+        /*margin-left: 485px;*/
+        display: inline;
+        float: right;
+    }
+    .cus_date input{
+        width: 170px;
+display: inline;
+    }
+
+    .date{
+        margin-top: -40px;
+    }
+    .date input{
+        width: 170px;
+        display: inline;
+    }
+
+    #cus_name{
+        width: 68%;
+    }
+    table tr td {
+        border: 1px solid #494847;
+    }
+
+
+}
