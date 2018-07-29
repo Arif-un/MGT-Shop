@@ -13,7 +13,7 @@ if (isset($_SESSION['login'])) {
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Invoice</title>
         <script src="../../resource/js/jquery.js"></script>
         <link href="../../resource/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen,projection,">
         <script src="../../resource/js/bootstrap.min.js"></script>

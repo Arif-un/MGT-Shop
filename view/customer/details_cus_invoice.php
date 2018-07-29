@@ -22,7 +22,7 @@ $allinfo= $all[0];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Invoice</title>
     <script src="../../resource/js/jquery-3.3.1.min.js"></script>
   <!--  <script src="../resource/js/jquery.js"></script>-->
     <link href="../../resource/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen,projection,">
