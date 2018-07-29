@@ -47,7 +47,7 @@ What things you need to install the application.
 
 ------------
 
-![imgs](https://github.com/Arif-un/MGT-Shop/blob/master/Screenshots/Capture3.PNG?raw=true)
+![shop-invoice-creator](https://github.com/Arif-un/MGT-Shop/blob/master/Screenshots/Capture3.PNG?raw=true)
 
 ------------
 
@@ -55,8 +55,6 @@ What things you need to install the application.
 
 ------------
 
-
-![shop-invoice-creator](https://github.com/Arif-un/Digital-Classroom/blob/master/Screenshots/capture%205.png?raw=true "digital classroom")
 ------------
 
 ### License
