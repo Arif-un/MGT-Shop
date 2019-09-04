@@ -28,13 +28,13 @@ What things you need to install the application.
 ### Description
 
 ------------
-- User have to add Customar/Supplier with his details.
+- User has to add Customer/Supplier with his details.
 - Add Products with details and price.
-- Then create Invoice with customar/supplier name , date pick from system, just select product and give quantity.
-- It will generate invoice automatically and can able to PRINT.
-- User can see all transection invoice and can able to edit them.
+- Then create Invoice with customwr/supplier name, date pick from the system, just select product and give quantity.
+- It will generate an invoice automatically and can able to PRINT.
+- User can see all transaction invoice and can able to edit them.
 - By giving From-To date , user can get report monthly or between giving 2 dates.
-- Report also provide total  amount of transaction.
+- The report also provides the total  amount of transaction.
 
 ##### Some Screneshots :
 
